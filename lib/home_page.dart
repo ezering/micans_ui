@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:micans/micans.dart';
 
@@ -13,16 +14,20 @@ class HomePage extends StatelessWidget {
       'route': '/typography',
     },
     {
+      'name': 'Colors',
+      'route': '/colors',
+    },
+    {
       'name': 'Buttons',
       'route': '/buttons',
     },
     {
-      'name': 'Cards',
-      'route': '/cards',
-    },
-    {
       'name': 'Inputs',
       'route': '/inputs',
+    },
+    {
+      'name': 'Cards',
+      'route': '/cards',
     },
     {
       'name': 'Lists',
@@ -69,11 +74,25 @@ class HomePage extends StatelessWidget {
         ),
         itemCount: listOfComponents.length,
         itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: InkWell(
-              onTap: () {
-                log.i('Tapped ${listOfComponents[index]['name']}');
-              },
+          return GestureDetector(
+            onTap: () {
+              log.i('Tapped ${listOfComponents[index]['name']}');
+              AutoRouter.of(context).pushNamed(
+                listOfComponents[index]['route'],
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 4,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
               child: Center(
                 child: MicansTypography.headingThree(
                   listOfComponents[index]['name'],

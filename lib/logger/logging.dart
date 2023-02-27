@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart';
 
+// ignore: prefer_function_declarations_over_variables
 final logger = (Type type) =>
     Logger(printer: Sentinel(type.toString()), level: Logger.level);
 
