@@ -84,12 +84,12 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: const [
+                borderRadius: BorderRadius.circular(0),
+                boxShadow: const <BoxShadow>[
                   BoxShadow(
                     color: Colors.black12,
                     blurRadius: 4,
-                    offset: Offset(0, 2),
+                    offset: Offset(0, 1),
                   ),
                 ],
               ),

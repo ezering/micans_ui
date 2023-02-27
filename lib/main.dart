@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:micans/micans.dart';
 import 'package:micans_ui/routes/router.gr.dart';
 
 void main() {
-  runApp(const AppWidget());
+  runApp(AppWidget());
 }
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({super.key});
+  AppWidget({super.key});
+  final appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter();
     return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: MicansColors.white,
+        primaryColor: MicansColors.primary_60,
+        primarySwatch:
+            MicansColors.createMaterialColor(MicansColors.primary_80),
       ).copyWith(
         textTheme: GoogleFonts.interTextTheme(
           Theme.of(context).textTheme,
@@ -30,8 +35,8 @@ class AppWidget extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

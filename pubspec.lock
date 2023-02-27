@@ -376,7 +376,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "0519926ab13e26de5084526a6b009f0ad7aa1a54"
+      resolved-ref: c89c97c8a670d1a617022d5aa06e063b52347d78
       url: "https://github.com/ezering/micans.git"
     source: git
     version: "0.0.1"

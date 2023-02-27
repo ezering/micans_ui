@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:micans_ui/home_page.dart';
 import 'package:micans_ui/typography/typography.dart';
 
+import '../colors/colors.dart';
+
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: [
@@ -14,7 +16,13 @@ import 'package:micans_ui/typography/typography.dart';
       page: TypographyScreen,
       name: 'TypographyScreen',
       path: '/typography',
-      transitionsBuilder: TransitionsBuilders.slideBottom,
+      transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+    ),
+    CustomRoute(
+      page: MicansColorsScreen,
+      name: 'MicansColorsScreen',
+      path: '/colors',
+      transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
     ),
   ],
 )
